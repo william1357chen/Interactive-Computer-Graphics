@@ -1,0 +1,8 @@
+﻿  moving_sphere.cpp
+C:\Users\will\Desktop\interactive-graphics\hw\assignment-2\Assignement-1\moving_sphere.cpp(88,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\will\Desktop\interactive-graphics\hw\assignment-2\Assignement-1\moving_sphere.cpp(129,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\will\Desktop\interactive-graphics\hw\assignment-2\Assignement-1\moving_sphere.cpp(204,41): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\will\Desktop\interactive-graphics\hw\assignment-2\Assignement-1\moving_sphere.cpp(283,39): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+C:\Users\will\Desktop\interactive-graphics\hw\assignment-2\Assignement-1\moving_sphere.cpp(294,39): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+C:\Users\will\Desktop\interactive-graphics\hw\assignment-2\Assignement-1\moving_sphere.cpp(306,39): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+  Assignement-1.vcxproj -> C:\Users\will\Desktop\interactive-graphics\hw\assignment-2\Assignement-1\x64\Debug\Assignement-2.exe

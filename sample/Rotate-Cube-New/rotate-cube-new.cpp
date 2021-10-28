@@ -189,6 +189,8 @@ void drawObj(GLuint buffer, int num_vertices)
 
     /*----- Set up vertex attribute arrays for each vertex attribute -----*/
     GLuint vPosition = glGetAttribLocation(program, "vPosition");
+    
+
     glEnableVertexAttribArray(vPosition);
     glVertexAttribPointer(vPosition, 3, GL_FLOAT, GL_FALSE, 0,
 			  BUFFER_OFFSET(0) );
