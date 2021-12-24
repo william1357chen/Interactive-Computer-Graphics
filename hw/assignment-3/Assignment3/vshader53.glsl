@@ -36,12 +36,34 @@ uniform float ConstAtt;  // Constant Attenuation
 uniform float LinearAtt; // Linear Attenuation
 uniform float QuadAtt;   // Quadratic Attenuation
 
+struct MaterialLightReflection {
+    vec4 ambient;
+    vec4 diffuse;
+    vec4 specular;
+};
 
-void main()
-{
-    // Add global ambient light
-    color = GlobalAmbientProduct;
 
+float computePositionalAttenuation(){
+    vec3 pos = (model_view * vPosition).xyz;
+    float distance = length( PositionalLightPosition.xyz - pos);
+    float attenuation = 1.0 / (ConstAtt + LinearAtt * distance + QuadAtt * pow(distance, 2));
+
+    if (SpotLightFlag == 1){
+        float spotlight_attenuation;
+        vec3 L = normalize( PositionalLightPosition.xyz - pos );
+        vec3 LF = normalize( SpotLightFocusPosition.xyz - PositionalLightPosition.xyz );
+
+        if (dot(LF, -L) < cos(CutOffAngle))
+            spotlight_attenuation = 0;
+        else
+            spotlight_attenuation = pow( dot(LF, -L), SpotLightExponent);
+
+        attenuation = attenuation * spotlight_attenuation;
+    }
+    return attenuation;
+}
+
+MaterialLightReflection computeDirectionalReflections(){
     // Add directional light
     // Transform vertex position into eye coordinates
     vec3 pos = (model_view * vPosition).xyz;
@@ -57,8 +79,6 @@ void main()
 //     ==> If (N dot E) < 0 then N must be changed to -N
 //
     if ( dot(N, E) < 0 ) N = -N;
-/*--- To Do: Compute attenuation for Directional Light ---*/
-    float attenuation = 1.0; 
 
  // Compute terms in the illumination equation
     vec4 ambient = DirectionAmbientProduct;
@@ -72,49 +92,63 @@ void main()
     if( dot(L, N) < 0.0 ) {
 	    specular = vec4(0.0, 0.0, 0.0, 1.0);
     } 
+    MaterialLightReflection result;
+    result.ambient = ambient;
+    result.diffuse = diffuse;
+    result.specular = specular;
+    return result;
+}
 
-    color += attenuation * (ambient + diffuse + specular);
+MaterialLightReflection computePositionalReflections(){
+    vec3 pos = (model_view * vPosition).xyz;
 
-    /*--- To Do: Compute attenuation for Directional Light ---*/
+    vec3 L = normalize( PositionalLightPosition.xyz - pos );
+    vec3 E = normalize( -pos );
+    vec3 H = normalize( L + E );
 
-    float distance = length( PositionalLightPosition.xyz - pos);
-    attenuation = 1.0 / (ConstAtt + LinearAtt * distance + QuadAtt * pow(distance, 2));
-
-    if (SpotLightFlag == 1){
-        float spotlight_attenuation;
-        L = normalize( PositionalLightPosition.xyz - pos );
-        vec3 LF = normalize( SpotLightFocusPosition.xyz - PositionalLightPosition.xyz );
-
-        if (dot(LF, -L) < cos(CutOffAngle))
-            spotlight_attenuation = 0;
-        else
-            spotlight_attenuation = pow( dot(LF, -L), SpotLightExponent);
-
-        attenuation = attenuation * spotlight_attenuation;
-    }
-
-    N = normalize(Normal_Matrix * vNormal);
+    vec3 N = normalize(Normal_Matrix * vNormal);
     if ( dot(N, E) < 0 ) N = -N;
 
-    L = normalize( PositionalLightPosition.xyz - pos );
-    E = normalize( -pos );
-    H = normalize( L + E );
 
     // Compute terms in the illumination equation
-    ambient = PositionAmbientProduct;
+    vec4 ambient = PositionAmbientProduct;
 
-    d = max( dot(L, N), 0.0 );
-    diffuse = d * PositionDiffuseProduct;
+    float d = max( dot(L, N), 0.0 );
+    vec4 diffuse = d * PositionDiffuseProduct;
 
-    s = pow( max(dot(N, H), 0.0), Shininess );
-    specular = s * PositionSpecularProduct;
+    float s = pow( max(dot(N, H), 0.0), Shininess );
+    vec4 specular = s * PositionSpecularProduct;
     
     if( dot(L, N) < 0.0 ) {
 	    specular = vec4(0.0, 0.0, 0.0, 1.0);
     } 
+    MaterialLightReflection result;
+    result.ambient = ambient;
+    result.diffuse = diffuse;
+    result.specular = specular;
+    return result;
+}
 
-    if (SpotLightFlag == 1 || PointSourceFlag == 1)
-        color += attenuation * (ambient + diffuse + specular);
+void main()
+{
+    // Add global ambient light
+    color = GlobalAmbientProduct;
+
+    MaterialLightReflection d = computeDirectionalReflections();
+
+    /*--- To Do: Compute attenuation for Directional Light ---*/
+    float attenuation = 1.0; 
+
+    color += attenuation * (d.ambient + d.diffuse + d.specular);
+
+    /*--- To Do: Compute attenuation for Positional Light ---*/
+    attenuation = computePositionalAttenuation();
+
+    if (SpotLightFlag == 1 || PointSourceFlag == 1){
+        MaterialLightReflection p = computePositionalReflections();
+        color += attenuation * (p.ambient + p.diffuse + p.specular);
+    }
+        
 
     gl_Position = projection * model_view * vPosition;
 }

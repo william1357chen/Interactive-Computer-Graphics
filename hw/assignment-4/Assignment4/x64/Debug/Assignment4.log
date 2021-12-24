@@ -1,0 +1,21 @@
+﻿  main.cpp
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\DirectionalLight.h(24,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\PositionalLight.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Fog.h(12,19): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Fog.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Sphere.h(86,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Sphere.h(88,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Sphere.h(89,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Sphere.h(187,43): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Sphere.h(198,43): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Sphere.h(210,43): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Shadow.h(29,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Floor.h(36,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Firework.h(24,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Firework.h(25,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Firework.h(26,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Firework.h(31,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Firework.h(32,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\Firework.h(33,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\main.cpp(100,41): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  Assignment4.vcxproj -> C:\Users\willi\Desktop\interactive-graphics\hw\assignment-4\Assignment4\x64\Debug\Assignment4.exe

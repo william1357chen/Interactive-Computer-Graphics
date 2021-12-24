@@ -1,18 +1,1 @@
-﻿  main.cpp
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(131,44): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(132,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(134,53): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(144,47): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(153,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(157,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(158,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(159,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(214,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(215,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(216,55): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(217,59): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(329,41): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(502,39): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(513,39): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
-C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\main.cpp(525,39): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
-  Assignment3.vcxproj -> C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\x64\Debug\Assignment3.exe
+﻿  Assignment3.vcxproj -> C:\Users\willi\Desktop\interactive-graphics\hw\assignment-3\Assignment3\x64\Debug\Assignment3.exe
